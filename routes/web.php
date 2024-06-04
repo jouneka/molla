@@ -86,4 +86,4 @@ Route::match(['put','patch'],'{id}/comment',function (App\Http\Requests\CommentR
     return redirect()->back();
 })->name('comment');
 
-
+/*Salalalam*/
