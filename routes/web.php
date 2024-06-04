@@ -85,5 +85,5 @@ Route::match(['put','patch'],'{id}/comment',function (App\Http\Requests\CommentR
     $comment=DB::table('comments')->insert($input);
     return redirect()->back();
 })->name('comment');
-
+/**/
 
