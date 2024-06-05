@@ -1,7 +1,7 @@
 <header>
     <nav class="nav">
-            <a href="#" class="nav-link" >--Home--</a>
-            <a href="#" class="nav-link">--Articles--</a>
-            <a href="#" class="nav-link">--Products--</a>
+            <a href="{{route('home')}}" class="nav-link" >--Home--</a>
+            <a href="{{route('articles')}}" class="nav-link">--Articles--</a>
+            <a href="{{route('index')}}" class="nav-link">--Products--</a>
     </nav>
 </header>

@@ -12,8 +12,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description" >Description</label>
-                    <textarea  name ="description"  class="form-control" id="description" ></textarea>
+                    <label for="descript" >Description</label>
+                    <input  name ="descript"  class="form-control" id="descript" >
                 </div>
 
                 <div class="form-group">
@@ -27,12 +27,10 @@
                 </div>
 
                 <div class="form-group">
-
-                        <select name="is-active" class="form-control">
-                            <option value="1">Enable</option>
-                            <option value="0">able</option>
-                        </select>
-
+                    <select   name="is_active" class="form-control">
+                        <option value="1">able</option>
+                        <option value="0">unable</option>
+                    </select>
                 </div>
 
                 <div class="form-group">

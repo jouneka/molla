@@ -9,7 +9,7 @@ use \App\Models\Comment;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/create',function (){
  return view('layout.product.create');
@@ -25,6 +25,7 @@ Route::get('/insert',function (productRequest $request){
 
     ];
     DB::table('products')->insert($input);
+    return redirect()->back();
     /*methode of insert need (key:value) */
 })->name('store');
 
@@ -50,6 +51,7 @@ Route::match(['put','patch'],'{id}',function (productRequest $request,$id){
 
     ];
     DB::table('products')->where('id',$id)->update($input);
+    return redirect()->back();
 })->name('update');
 
 
@@ -58,6 +60,7 @@ Route::get('index',function (){
     return view('layout.product.indexpro',compact('products'));
 })->name('index');
 /*this route for article*/
+
 Route::get('saveArticle',function (){
     return view('layout.article.create_article');
 
@@ -85,5 +88,8 @@ Route::match(['put','patch'],'{id}/comment',function (App\Http\Requests\CommentR
     $comment=DB::table('comments')->insert($input);
     return redirect()->back();
 })->name('comment');
-/**/
 
+Route::get('/articles',function (){
+    $articles=Article::with('comments')->get();
+    return view('layout.article.my_articles',compact('articles'));
+})->name('articles');
